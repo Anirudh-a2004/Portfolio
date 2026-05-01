@@ -30,8 +30,8 @@ const AboutSection = () => {
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="gradient-text mb-4">About Me</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Student at SEA College of Engineering (VTU), pursuing BE in IoT & CSBT with a 
-            passion for connected systems and cybersecurity.
+            Final-year B.E. Computer Science Engineering (IoT & CSBT) student passionate about
+            software development, IoT systems, and emerging technologies.
           </p>
         </div>
 
@@ -44,19 +44,17 @@ const AboutSection = () => {
               </h3>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  As a dedicated engineering student specializing in IoT and Cyber Security & 
-                  Blockchain Technology, I'm passionate about creating innovative solutions that 
-                  bridge the gap between connected devices and robust security frameworks.
+                  Final-year B.E. Computer Science Engineering (IoT & CSBT) student with interest
+                  in software development, IoT systems, and emerging technologies.
                 </p>
                 <p>
-                  My academic journey has been complemented by practical projects that showcase 
-                  my ability to implement real-world solutions, from voice-controlled surveillance 
-                  systems to blockchain-based storage solutions.
+                  Hands-on experience through internships and academic projects involving
+                  cybersecurity fundamentals, SAP technologies, AI-based systems, and web
+                  development concepts.
                 </p>
                 <p>
-                  I believe in continuous learning and am actively building expertise in 
-                  cybersecurity fundamentals while maintaining a strong foundation in 
-                  programming and system design.
+                  Passionate about learning modern technologies, solving real-world problems,
+                  and continuously improving technical and analytical skills.
                 </p>
               </div>
             </div>
