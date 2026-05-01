@@ -35,7 +35,7 @@ const ProjectsSection = () => {
       period: "08/2024 – 01/2025",
       github: "https://github.com/Anirudh-a2004",
       demo: null,
-      featured: false
+      featured: true
     }
   ];
 
