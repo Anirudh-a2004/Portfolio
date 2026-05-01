@@ -56,7 +56,7 @@ const ProjectsSection = () => {
               className={`card-hover ${project.featured ? 'md:col-span-2' : ''} group`}
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className={`grid ${project.featured ? 'md:grid-cols-2' : 'grid-cols-1'} gap-6 items-center`}>
+              <div className="grid grid-cols-1 gap-6 items-center">
                 {/* Project Icon & Info */}
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
