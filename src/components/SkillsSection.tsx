@@ -17,9 +17,9 @@ const SkillsSection = () => {
   ];
 
   const allSkills = [
-    "React.js Fundamentals", "Node.js & Express.js", "REST APIs", "Git & GitHub",
-    "ML & DL Fundamentals", "SAP ABAP Basics", "Networking & Network Security",
-    "IoT & Cloud Fundamentals", "Cybersecurity Fundamentals", "Java", "C Programming"
+    "Cybersecurity Fundamentals", "Networking & Network Security", "IoT & Cloud Fundamentals",
+    "Java", "C Programming", "SAP ABAP Basics", "ML & DL Fundamentals",
+    "React.js Fundamentals", "Node.js & Express.js", "REST APIs", "Git & GitHub"
   ];
 
   return (
