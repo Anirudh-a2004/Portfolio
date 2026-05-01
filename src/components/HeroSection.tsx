@@ -44,10 +44,12 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
             <Button 
               className="btn-hero-primary group"
-              onClick={() => window.open('/resume.pdf', '_blank')}
+              asChild
             >
-              <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-              Download Resume
+              <a href="/resume.pdf" download="Anirudh_A_Resume.pdf">
+                <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+                Download Resume
+              </a>
             </Button>
             <Button 
               variant="outline"
