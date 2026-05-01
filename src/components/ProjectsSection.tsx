@@ -56,7 +56,7 @@ const ProjectsSection = () => {
               className={`card-hover ${project.featured ? 'md:col-span-2' : ''} group`}
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className={`grid ${project.featured ? 'md:grid-cols-2' : 'grid-cols-1'} gap-6 items-center`}>
+              <div className="grid grid-cols-1 gap-6 items-center">
                 {/* Project Icon & Info */}
                 <div className="space-y-6">
                   <div className="flex items-center space-x-4">
@@ -115,19 +115,6 @@ const ProjectsSection = () => {
                   </div>
                 </div>
 
-                {/* Project Visual (for featured projects) */}
-                {project.featured && (
-                  <div className="hidden md:block">
-                    <div className="aspect-video bg-gradient-card rounded-xl border-2 border-border flex items-center justify-center">
-                      <div className="text-center space-y-4">
-                        <div className="w-16 h-16 mx-auto bg-gradient-hero rounded-full flex items-center justify-center text-primary-foreground">
-                          {project.icon}
-                        </div>
-                        <p className="text-muted-foreground">Project Demo</p>
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
           ))}
