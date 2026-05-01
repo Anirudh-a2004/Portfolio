@@ -1,30 +1,51 @@
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Award } from "lucide-react";
+import { Calendar, MapPin, Award, Brain, Database, Shield } from "lucide-react";
 
 const ExperienceSection = () => {
   const experiences = [
     {
-      title: "Java Training Program",
-      organization: "Tap Academy",
-      duration: "2025",
-      location: "Training Institute",
-      type: "Training",
+      title: "Generative AI Assisted Android App Development Intern",
+      organization: "MindMartix",
+      duration: "02/2026 – Present",
+      location: "Bangalore, India",
+      type: "Internship",
       highlights: [
-        "Hands-on Java fundamentals and core concepts",
-        "Object-Oriented Programming (OOP) principles",
-        "Data types, control structures, and algorithms",
-        "Basic project development and implementation",
-        "Problem-solving methodologies"
+        "Exploring AI-assisted Android application development workflows",
+        "Learning modern AI-supported development practices"
       ],
-      icon: <Award className="w-6 h-6" />
+      icon: <Brain className="w-6 h-6" />
+    },
+    {
+      title: "Edge Computing, SAP ABAP, SAP Analytic Cloud Intern",
+      organization: "Edunet Foundation",
+      duration: "10/2025 – 02/2026",
+      location: "Bangalore, India",
+      type: "Internship",
+      highlights: [
+        "Working with SAP ABAP and Edge Computing concepts",
+        "Exploring analytics and backend-oriented development workflows"
+      ],
+      icon: <Database className="w-6 h-6" />
+    },
+    {
+      title: "Cybersecurity Intern",
+      organization: "ELEVATE LABS",
+      duration: "10/2025 – 12/2025",
+      location: "Bangalore, India",
+      type: "Internship",
+      highlights: [
+        "Assisted in vulnerability assessment and phishing analysis",
+        "Worked on basic security monitoring and VAPT-related tasks"
+      ],
+      icon: <Shield className="w-6 h-6" />
     }
   ];
 
   const achievements = [
-    "Strong foundation in Java programming",
-    "Practical experience with OOP concepts",
-    "Project-based learning approach",
-    "Industry-standard coding practices"
+    "Hands-on experience across AI, SAP, and cybersecurity domains",
+    "Exposure to real-world enterprise tools and workflows",
+    "Practical experience with vulnerability assessment & VAPT",
+    "Strong foundation in modern software & analytics stacks"
   ];
 
   return (
@@ -82,7 +103,7 @@ const ExperienceSection = () => {
                     </div>
 
                     <div className="space-y-3">
-                      <h4 className="font-medium text-card-foreground">Key Learning Areas:</h4>
+                      <h4 className="font-medium text-card-foreground">Responsibilities:</h4>
                       <ul className="space-y-2 text-muted-foreground">
                         {exp.highlights.map((highlight, hIndex) => (
                           <li key={hIndex} className="flex items-start gap-2">
