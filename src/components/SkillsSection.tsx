@@ -3,17 +3,23 @@ import { Badge } from "@/components/ui/badge";
 const SkillsSection = () => {
   const skillCategories = [
     {
-      title: "Programming Languages",
-      skills: ["Java", "C Programming", "Bash Scripting"]
+      title: "Web Development",
+      skills: ["React.js Fundamentals", "Node.js & Express.js", "REST APIs", "Git & GitHub"]
     },
     {
-      title: "Core Technologies",
-      skills: ["IoT Fundamentals", "Linux & Networking", "Cybersecurity Basics"]
+      title: "Core & Programming",
+      skills: ["Java", "C Programming", "SAP ABAP Basics", "ML & DL Fundamentals"]
     },
     {
-      title: "Emerging Tech",
-      skills: ["Blockchain Technology", "Voice Recognition", "Cloud Storage"]
+      title: "Security & Systems",
+      skills: ["Cybersecurity Fundamentals", "Networking & Network Security", "IoT & Cloud Fundamentals"]
     }
+  ];
+
+  const allSkills = [
+    "React.js Fundamentals", "Node.js & Express.js", "REST APIs", "Git & GitHub",
+    "ML & DL Fundamentals", "SAP ABAP Basics", "Networking & Network Security",
+    "IoT & Cloud Fundamentals", "Cybersecurity Fundamentals", "Java", "C Programming"
   ];
 
   return (
@@ -22,7 +28,7 @@ const SkillsSection = () => {
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="gradient-text mb-4">Technical Skills</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A comprehensive skill set spanning programming, cybersecurity, and emerging technologies
+            A comprehensive skill set spanning software development, IoT, and cybersecurity
           </p>
         </div>
 
@@ -57,11 +63,7 @@ const SkillsSection = () => {
             All Skills at a Glance
           </h3>
           <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
-            {[
-              "Java", "C Programming", "Bash", "IoT Fundamentals", 
-              "Cybersecurity Basics", "Linux & Networking", "Blockchain Technology",
-              "Voice Recognition", "Cloud Storage", "System Design", "Problem Solving"
-            ].map((skill, index) => (
+            {allSkills.map((skill, index) => (
               <Badge 
                 key={index}
                 variant="outline"
