@@ -89,9 +89,15 @@ const ExperienceSection = () => {
                       <h3 className="text-xl font-semibold text-card-foreground">
                         {exp.title}
                       </h3>
-                      <p className="text-lg text-primary font-medium">
+                      <a
+                        href={exp.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-lg text-primary font-medium hover:underline inline-flex items-center gap-1"
+                      >
                         {exp.organization}
-                      </p>
+                        <span aria-hidden>↗</span>
+                      </a>
                     </div>
 
                     <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
