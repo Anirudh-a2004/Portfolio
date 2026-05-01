@@ -115,19 +115,6 @@ const ProjectsSection = () => {
                   </div>
                 </div>
 
-                {/* Project Visual (for featured projects) */}
-                {project.featured && (
-                  <div className="hidden md:block">
-                    <div className="aspect-video bg-gradient-card rounded-xl border-2 border-border flex items-center justify-center">
-                      <div className="text-center space-y-4">
-                        <div className="w-16 h-16 mx-auto bg-gradient-hero rounded-full flex items-center justify-center text-primary-foreground">
-                          {project.icon}
-                        </div>
-                        <p className="text-muted-foreground">Project Demo</p>
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
           ))}
