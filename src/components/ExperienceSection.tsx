@@ -6,6 +6,7 @@ const ExperienceSection = () => {
     {
       title: "Generative AI Assisted Android App Development Intern",
       organization: "MindMartix",
+      website: "https://lms.mindmatrix.io/",
       duration: "02/2026 – Present",
       location: "Bangalore, India",
       type: "Internship",
@@ -18,6 +19,7 @@ const ExperienceSection = () => {
     {
       title: "Edge Computing, SAP ABAP, SAP Analytic Cloud Intern",
       organization: "Edunet Foundation",
+      website: "https://edunetfoundation.org/",
       duration: "10/2025 – 02/2026",
       location: "Bangalore, India",
       type: "Internship",
@@ -30,6 +32,7 @@ const ExperienceSection = () => {
     {
       title: "Cybersecurity Intern",
       organization: "ELEVATE LABS",
+      website: "https://elevatelabs.in/",
       duration: "10/2025 – 12/2025",
       location: "Bangalore, India",
       type: "Internship",
@@ -86,9 +89,15 @@ const ExperienceSection = () => {
                       <h3 className="text-xl font-semibold text-card-foreground">
                         {exp.title}
                       </h3>
-                      <p className="text-lg text-primary font-medium">
+                      <a
+                        href={exp.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-lg text-primary font-medium hover:underline inline-flex items-center gap-1"
+                      >
                         {exp.organization}
-                      </p>
+                        <span aria-hidden>↗</span>
+                      </a>
                     </div>
 
                     <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
