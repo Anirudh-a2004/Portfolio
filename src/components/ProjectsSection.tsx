@@ -67,6 +67,9 @@ const ProjectsSection = () => {
                       <h3 className="text-2xl font-semibold text-card-foreground group-hover:text-primary transition-colors">
                         {project.title}
                       </h3>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {project.role} • {project.period}
+                      </p>
                       {project.featured && (
                         <Badge className="skill-badge mt-2">Featured Project</Badge>
                       )}
