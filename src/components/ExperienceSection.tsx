@@ -103,7 +103,7 @@ const ExperienceSection = () => {
                     </div>
 
                     <div className="space-y-3">
-                      <h4 className="font-medium text-card-foreground">Key Learning Areas:</h4>
+                      <h4 className="font-medium text-card-foreground">Responsibilities:</h4>
                       <ul className="space-y-2 text-muted-foreground">
                         {exp.highlights.map((highlight, hIndex) => (
                           <li key={hIndex} className="flex items-start gap-2">
