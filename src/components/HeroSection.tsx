@@ -30,7 +30,7 @@ const HeroSection = () => {
               Anirudh A
             </h1>
             <h2 className="text-xl md:text-2xl text-muted-foreground font-medium">
-              Aspiring Cybersecurity Professional | BE in IoT & CSBT
+              Aspiring Software & IoT Engineer
             </h2>
           </div>
 
