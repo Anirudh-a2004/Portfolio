@@ -1,32 +1,38 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, ExternalLink, Mic, Users, Shield } from "lucide-react";
+import { Github, ExternalLink, Mic, Database, Brain } from "lucide-react";
 
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "Smart Voice Surveillance and Alert Device",
-      description: "An intelligent surveillance system using Nicla Voice Acoustic Sensor for real-time audio monitoring and threat detection. Features advanced voice recognition and automated alert mechanisms.",
-      technologies: ["IoT", "Voice Recognition", "Embedded Systems", "C++"],
-      icon: <Mic className="w-8 h-8" />,
+      title: "Multimodal AI System for Emergency & Distress Detection",
+      description: "Developed an AI-powered emergency detection system using audio stress analysis and speech recognition. Integrated FastAPI, TensorFlow/Keras, and Whisper ASR for intelligent distress detection and alert workflows.",
+      technologies: ["FastAPI", "TensorFlow/Keras", "Whisper ASR", "Python", "AI/ML"],
+      icon: <Brain className="w-8 h-8" />,
+      role: "Team Lead",
+      period: "11/2025 – 01/2026",
       github: "https://github.com/Anirudh-a2004",
       demo: null,
       featured: true
     },
     {
-      title: "Attendance Tracker",
-      description: "A comprehensive attendance management system designed for educational institutions. Streamlines the process of tracking student attendance with automated reporting features.",
-      technologies: ["Java", "Database Management", "UI/UX Design"],
-      icon: <Users className="w-8 h-8" />,
+      title: "Decentralized Cloud Storage using Blockchain Technology",
+      description: "Built a decentralized cloud storage system using Ethereum, Solidity, IPFS, React, and MetaMask. Enabled secure file upload, preview, download, and management — ensuring data integrity, immutability, and secure access control through blockchain.",
+      technologies: ["Ethereum", "Solidity", "IPFS", "React", "MetaMask"],
+      icon: <Database className="w-8 h-8" />,
+      role: "Team Lead",
+      period: "04/2025 – 12/2025",
       github: "https://github.com/Anirudh-a2004",
       demo: null,
-      featured: false
+      featured: true
     },
     {
-      title: "Esports Tournament Manager",
-      description: "A complete tournament management platform for esports events. Handles player registration, bracket generation, match scheduling, and result tracking.",
-      technologies: ["Java", "Tournament Logic", "Database Design"],
-      icon: <Shield className="w-8 h-8" />,
+      title: "Voice Surveillance using Arduino Nicla Voice Sensor",
+      description: "Developed a voice-activated surveillance system to detect abnormal sound levels in real time. Implemented automated alerts and IoT-based remote monitoring focused on security.",
+      technologies: ["Arduino", "Nicla Voice Sensor", "IoT", "Embedded Systems"],
+      icon: <Mic className="w-8 h-8" />,
+      role: "Developer",
+      period: "08/2024 – 01/2025",
       github: "https://github.com/Anirudh-a2004",
       demo: null,
       featured: false
