@@ -8,7 +8,7 @@ const ExperienceSection = () => {
       organization: "TechAptiva",
       website: "#",
       duration: "07/2026 – Present",
-      location: "Kochi, Kerala, India",
+      location: "Kochi, India",
       type: "Internship",
       highlights: [
         "Assisted in monitoring, troubleshooting, and maintaining IT systems and network infrastructure",

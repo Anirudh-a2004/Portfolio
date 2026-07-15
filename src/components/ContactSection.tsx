@@ -141,7 +141,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <p className="font-medium text-card-foreground">Location</p>
-                    <p className="text-muted-foreground">Bangalore, Karnataka, India</p>
+                    <p className="text-muted-foreground">Kochi, Kerala, India</p>
                   </div>
                 </div>
               </div>
