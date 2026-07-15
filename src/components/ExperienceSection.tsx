@@ -22,7 +22,7 @@ const ExperienceSection = () => {
       title: "Generative AI Assisted Android App Development Intern",
       organization: "MindMartix",
       website: "https://lms.mindmatrix.io/",
-      duration: "02/2026 – Present",
+      duration: "02/2026 – 05/2026",
       location: "Bangalore, India",
       type: "Internship",
       highlights: [
