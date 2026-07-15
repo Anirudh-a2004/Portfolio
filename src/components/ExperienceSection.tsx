@@ -1,8 +1,23 @@
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MapPin, Award, Brain, Database, Shield } from "lucide-react";
+import { Calendar, MapPin, Award, Brain, Database, Shield, Headphones } from "lucide-react";
 
 const ExperienceSection = () => {
   const experiences = [
+    {
+      title: "Technical Support Intern",
+      organization: "TechAptiva",
+      website: "#",
+      duration: "07/2026 – Present",
+      location: "Kochi, Kerala, India",
+      type: "Internship",
+      highlights: [
+        "Assisted in monitoring, troubleshooting, and maintaining IT systems and network infrastructure",
+        "Diagnosed and resolved hardware, software, and connectivity issues",
+        "Supported system installation, configuration, and preventive maintenance activities",
+        "Collaborated with senior engineers to provide technical assistance and customer support"
+      ],
+      icon: <Headphones className="w-6 h-6" />
+    },
     {
       title: "Generative AI Assisted Android App Development Intern",
       organization: "MindMartix",
