@@ -6,7 +6,7 @@ const ExperienceSection = () => {
     {
       title: "Technical Support Intern",
       organization: "TechAptiva",
-      website: "#",
+      website: "https://www.techaptiva.com/",
       duration: "07/2026 – Present",
       location: "Kochi, India",
       type: "Internship",
