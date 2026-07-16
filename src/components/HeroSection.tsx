@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Download, ArrowRight } from "lucide-react";
 import avatarImage from "@/assets/anirudh-avatar.jpg";
+import Reveal from "@/components/Reveal";
 
 const HeroSection = () => {
   const scrollToProjects = () => {
@@ -11,7 +12,7 @@ const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-16">
       <div className="container mx-auto max-w-4xl text-center">
-        <div className="space-y-8 animate-fade-in-up">
+        <Reveal variant="fade-up" duration={700} className="space-y-8">
           {/* Avatar */}
           <div className="relative inline-block">
             <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden shadow-glow animate-float">
@@ -59,8 +60,8 @@ const HeroSection = () => {
               View Projects
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-          </div>
-        </div>
+            </div>
+        </Reveal>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">

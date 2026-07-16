@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink, Mic, Database, Brain } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 const ProjectsSection = () => {
   const projects = [
@@ -42,19 +43,20 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <Reveal className="text-center mb-16">
           <h2 className="gradient-text mb-4">Featured Projects</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             A showcase of innovative solutions combining IoT, cybersecurity, and software engineering
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid gap-8">
           {projects.map((project, index) => (
-            <div 
+            <Reveal
               key={index}
+              variant="fade-up"
+              delay={index * 120}
               className={`card-hover ${project.featured ? 'md:col-span-2' : ''} group`}
-              style={{ animationDelay: `${index * 200}ms` }}
             >
               <div className="grid grid-cols-1 gap-6 items-center">
                 {/* Project Icon & Info */}
@@ -116,12 +118,12 @@ const ProjectsSection = () => {
                 </div>
 
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16 animate-fade-in-up">
+        <Reveal className="text-center mt-16">
           <p className="text-lg text-muted-foreground mb-6">
             Interested in seeing more of my work?
           </p>
@@ -132,7 +134,7 @@ const ProjectsSection = () => {
             <Github className="w-5 h-5 mr-2" />
             View All Projects on GitHub
           </Button>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

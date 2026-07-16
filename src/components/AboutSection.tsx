@@ -1,4 +1,5 @@
 import { Code, Shield, Cpu, Database } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 const AboutSection = () => {
   const highlights = [
@@ -27,17 +28,17 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <Reveal className="text-center mb-16">
           <h2 className="gradient-text mb-4">About Me</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Final-year B.E. Computer Science Engineering (IoT & CSBT) student passionate about
             software development, IoT systems, and emerging technologies.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Description */}
-          <div className="space-y-6 animate-fade-in-up">
+          <Reveal className="space-y-6">
             <div className="glass-card p-8 rounded-2xl">
               <h3 className="text-2xl font-semibold mb-6 text-card-foreground">
                 My Journey
@@ -58,15 +59,16 @@ const AboutSection = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* Key Highlights */}
-          <div className="grid gap-6 animate-slide-in-right">
+          <div className="grid gap-6">
             {highlights.map((highlight, index) => (
-              <div 
+              <Reveal
                 key={index}
+                variant="slide-right"
+                delay={index * 100}
                 className="card-hover group"
-                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex items-start space-x-4">
                   <div className="p-3 bg-gradient-hero rounded-lg text-primary-foreground group-hover:scale-110 transition-transform">
@@ -81,7 +83,7 @@ const AboutSection = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

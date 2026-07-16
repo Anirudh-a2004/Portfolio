@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import Reveal from "@/components/Reveal";
 
 const SkillsSection = () => {
   const skillCategories = [
@@ -25,56 +26,53 @@ const SkillsSection = () => {
   return (
     <section id="skills" className="py-20 px-4 bg-gradient-hero-subtle">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <Reveal className="text-center mb-16">
           <h2 className="gradient-text mb-4">Technical Skills</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             A comprehensive skill set spanning software development, IoT, and cybersecurity
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid md:grid-cols-3 gap-8">
           {skillCategories.map((category, categoryIndex) => (
-            <div 
+            <Reveal
               key={categoryIndex}
-              className="glass-card p-8 rounded-2xl animate-scale-in"
-              style={{ animationDelay: `${categoryIndex * 200}ms` }}
+              variant="scale"
+              delay={categoryIndex * 150}
+              className="glass-card p-8 rounded-2xl"
             >
               <h3 className="text-xl font-semibold mb-6 text-card-foreground text-center">
                 {category.title}
               </h3>
               <div className="flex flex-wrap gap-3 justify-center">
                 {category.skills.map((skill, skillIndex) => (
-                  <Badge 
-                    key={skillIndex}
-                    className="skill-badge"
-                    style={{ animationDelay: `${(categoryIndex * 3 + skillIndex) * 100}ms` }}
-                  >
+                  <Badge key={skillIndex} className="skill-badge">
                     {skill}
                   </Badge>
                 ))}
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
         {/* Additional Skills Grid */}
-        <div className="mt-16 text-center animate-fade-in-up">
+        <Reveal className="mt-16 text-center">
           <h3 className="text-2xl font-semibold mb-8 text-foreground">
             All Skills at a Glance
           </h3>
           <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
             {allSkills.map((skill, index) => (
-              <Badge 
-                key={index}
-                variant="outline"
-                className="px-4 py-2 text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                {skill}
-              </Badge>
+              <Reveal key={index} variant="scale" duration={450} delay={index * 40} as="span">
+                <Badge
+                  variant="outline"
+                  className="px-4 py-2 text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+                >
+                  {skill}
+                </Badge>
+              </Reveal>
             ))}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

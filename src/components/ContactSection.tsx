@@ -4,6 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Mail, Linkedin, Github, Send, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
+import Reveal from "@/components/Reveal";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -50,17 +51,17 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <Reveal className="text-center mb-16">
           <h2 className="gradient-text mb-4">Get In Touch</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Ready to discuss opportunities, collaborate on projects, or just connect? 
             I'd love to hear from you!
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="animate-fade-in-up">
+          <Reveal>
             <Card className="glass-card p-8">
               <h3 className="text-2xl font-semibold mb-6 text-card-foreground">
                 Send a Message
@@ -116,10 +117,10 @@ const ContactSection = () => {
                 </Button>
               </form>
             </Card>
-          </div>
+          </Reveal>
 
           {/* Contact Information & Social Links */}
-          <div className="space-y-8 animate-slide-in-right">
+          <Reveal variant="slide-right" className="space-y-8">
             {/* Contact Info */}
             <Card className="glass-card p-8">
               <h3 className="text-2xl font-semibold mb-6 text-card-foreground">
@@ -176,11 +177,11 @@ const ContactSection = () => {
                 </Card>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16 animate-fade-in-up">
+        <Reveal className="text-center mt-16">
           <div className="glass-card p-8 rounded-2xl max-w-2xl mx-auto">
             <h3 className="text-2xl font-semibold mb-4 text-card-foreground">
               Let's Build Something Amazing Together
@@ -197,7 +198,7 @@ const ContactSection = () => {
               Start a Conversation
             </Button>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
