@@ -56,23 +56,23 @@ const SkillsSection = () => {
         </div>
 
         {/* Additional Skills Grid */}
-        <div className="mt-16 text-center animate-fade-in-up">
+        <Reveal className="mt-16 text-center">
           <h3 className="text-2xl font-semibold mb-8 text-foreground">
             All Skills at a Glance
           </h3>
           <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
             {allSkills.map((skill, index) => (
-              <Badge 
-                key={index}
-                variant="outline"
-                className="px-4 py-2 text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                {skill}
-              </Badge>
+              <Reveal key={index} variant="scale" duration={450} delay={index * 40} as="span">
+                <Badge
+                  variant="outline"
+                  className="px-4 py-2 text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+                >
+                  {skill}
+                </Badge>
+              </Reveal>
             ))}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
