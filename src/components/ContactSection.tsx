@@ -51,17 +51,17 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <Reveal className="text-center mb-16">
           <h2 className="gradient-text mb-4">Get In Touch</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Ready to discuss opportunities, collaborate on projects, or just connect? 
             I'd love to hear from you!
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="animate-fade-in-up">
+          <Reveal>
             <Card className="glass-card p-8">
               <h3 className="text-2xl font-semibold mb-6 text-card-foreground">
                 Send a Message
