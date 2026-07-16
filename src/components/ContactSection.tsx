@@ -117,10 +117,10 @@ const ContactSection = () => {
                 </Button>
               </form>
             </Card>
-          </div>
+          </Reveal>
 
           {/* Contact Information & Social Links */}
-          <div className="space-y-8 animate-slide-in-right">
+          <Reveal variant="slide-right" className="space-y-8">
             {/* Contact Info */}
             <Card className="glass-card p-8">
               <h3 className="text-2xl font-semibold mb-6 text-card-foreground">
@@ -177,11 +177,11 @@ const ContactSection = () => {
                 </Card>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16 animate-fade-in-up">
+        <Reveal className="text-center mt-16">
           <div className="glass-card p-8 rounded-2xl max-w-2xl mx-auto">
             <h3 className="text-2xl font-semibold mb-4 text-card-foreground">
               Let's Build Something Amazing Together
@@ -198,7 +198,7 @@ const ContactSection = () => {
               Start a Conversation
             </Button>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
