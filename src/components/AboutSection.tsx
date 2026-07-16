@@ -1,4 +1,5 @@
 import { Code, Shield, Cpu, Database } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 const AboutSection = () => {
   const highlights = [

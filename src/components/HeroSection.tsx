@@ -60,8 +60,8 @@ const HeroSection = () => {
               View Projects
               <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
-          </div>
-        </div>
+            </div>
+        </Reveal>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
