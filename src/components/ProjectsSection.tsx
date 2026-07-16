@@ -123,7 +123,7 @@ const ProjectsSection = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16 animate-fade-in-up">
+        <Reveal className="text-center mt-16">
           <p className="text-lg text-muted-foreground mb-6">
             Interested in seeing more of my work?
           </p>
@@ -134,7 +134,7 @@ const ProjectsSection = () => {
             <Github className="w-5 h-5 mr-2" />
             View All Projects on GitHub
           </Button>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

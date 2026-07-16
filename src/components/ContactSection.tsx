@@ -4,6 +4,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Mail, Linkedin, Github, Send, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
+import Reveal from "@/components/Reveal";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
