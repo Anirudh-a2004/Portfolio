@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, MapPin, Award, Brain, Database, Shield, Headphones } from "lucide-react";
+import { useReveal } from "@/hooks/use-reveal";
+import Reveal from "@/components/Reveal";
 
 type Experience = {
   title: string;
@@ -13,59 +14,36 @@ type Experience = {
   icon: JSX.Element;
 };
 
+const EASE = "cubic-bezier(0.16, 1, 0.3, 1)";
+
 const ExperienceCard = ({
   exp,
-  index,
   isLast,
 }: {
   exp: Experience;
-  index: number;
   isLast: boolean;
 }) => {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [visible, setVisible] = useState(false);
+  const { ref, visible } = useReveal<HTMLDivElement>({
+    threshold: 0.2,
+    rootMargin: "0px 0px -10% 0px",
+  });
 
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-
-    if (typeof IntersectionObserver === "undefined") {
-      setVisible(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2, rootMargin: "0px 0px -10% 0px" }
-    );
-
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
+  const t = (delay: number, duration = 600): React.CSSProperties => ({
+    transition: `opacity ${duration}ms ${EASE} ${delay}ms, transform ${duration}ms ${EASE} ${delay}ms`,
+    opacity: visible ? 1 : 0,
+    transform: visible ? "translateY(0)" : "translateY(10px)",
+    willChange: "opacity, transform",
+  });
 
   return (
-    <div
-      ref={ref}
-      className={`card-hover relative transition-all duration-700 ease-out will-change-transform ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-      }`}
-      style={{ transitionDelay: `${index * 120}ms` }}
-    >
-      {/* Animated timeline connector */}
+    <div ref={ref} className="card-hover relative motion-reduce:transition-none">
+      {/* Animated timeline connector — spans the full card height and bridges into the next card */}
       {!isLast && (
         <div
-          className="absolute left-8 top-20 w-0.5 h-16 bg-gradient-hero opacity-30 origin-top motion-reduce:transform-none"
+          className="absolute left-[2.25rem] top-16 -bottom-8 w-0.5 bg-gradient-hero opacity-30 origin-top motion-reduce:transform-none pointer-events-none"
           style={{
             transform: visible ? "scaleY(1)" : "scaleY(0)",
-            transition: "transform 900ms cubic-bezier(0.16, 1, 0.3, 1)",
-            transitionDelay: `${index * 120 + 200}ms`,
+            transition: `transform 900ms ${EASE} 150ms`,
           }}
           aria-hidden
         />
@@ -73,24 +51,17 @@ const ExperienceCard = ({
 
       <div className="flex items-start space-x-6">
         <div
-          className="p-3 bg-gradient-hero rounded-lg text-primary-foreground flex-shrink-0 transition-all duration-700 ease-out motion-reduce:transition-none"
+          className="p-3 bg-gradient-hero rounded-lg text-primary-foreground flex-shrink-0 motion-reduce:transition-none"
           style={{
-            transform: visible ? "scale(1)" : "scale(0.95)",
+            transition: `opacity 600ms ${EASE}, transform 600ms ${EASE}`,
             opacity: visible ? 1 : 0,
-            transitionDelay: `${index * 120}ms`,
+            transform: visible ? "scale(1)" : "scale(0.95)",
           }}
         >
           {exp.icon}
         </div>
         <div className="flex-1 space-y-4">
-          <div
-            className="transition-all duration-700 ease-out motion-reduce:transition-none"
-            style={{
-              opacity: visible ? 1 : 0,
-              transform: visible ? "translateY(0)" : "translateY(8px)",
-              transitionDelay: `${index * 120 + 150}ms`,
-            }}
-          >
+          <div style={t(120)}>
             <div className="flex items-center gap-2 mb-2">
               <Badge className="skill-badge text-xs">{exp.type}</Badge>
             </div>
@@ -109,12 +80,8 @@ const ExperienceCard = ({
           </div>
 
           <div
-            className="flex flex-wrap gap-4 text-sm text-muted-foreground transition-all duration-700 ease-out motion-reduce:transition-none"
-            style={{
-              opacity: visible ? 1 : 0,
-              transform: visible ? "translateY(0)" : "translateY(8px)",
-              transitionDelay: `${index * 120 + 250}ms`,
-            }}
+            className="flex flex-wrap gap-4 text-sm text-muted-foreground"
+            style={t(200)}
           >
             <div className="flex items-center gap-1">
               <Calendar className="w-4 h-4" />
@@ -127,26 +94,15 @@ const ExperienceCard = ({
           </div>
 
           <div className="space-y-3">
-            <h4
-              className="font-medium text-card-foreground transition-all duration-700 ease-out motion-reduce:transition-none"
-              style={{
-                opacity: visible ? 1 : 0,
-                transform: visible ? "translateY(0)" : "translateY(8px)",
-                transitionDelay: `${index * 120 + 350}ms`,
-              }}
-            >
+            <h4 className="font-medium text-card-foreground" style={t(280)}>
               Responsibilities:
             </h4>
             <ul className="space-y-2 text-muted-foreground">
               {exp.highlights.map((highlight, hIndex) => (
                 <li
                   key={hIndex}
-                  className="flex items-start gap-2 transition-all duration-500 ease-out motion-reduce:transition-none"
-                  style={{
-                    opacity: visible ? 1 : 0,
-                    transform: visible ? "translateY(0)" : "translateY(6px)",
-                    transitionDelay: `${index * 120 + 450 + hIndex * 80}ms`,
-                  }}
+                  className="flex items-start gap-2 motion-reduce:transition-none"
+                  style={t(340 + hIndex * 70, 500)}
                 >
                   <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   {highlight}
@@ -228,12 +184,12 @@ const ExperienceSection = () => {
   return (
     <section id="experience" className="py-20 px-4 bg-gradient-hero-subtle">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <Reveal className="text-center mb-16">
           <h2 className="gradient-text mb-4">Experience & Training</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Continuous learning through structured training programs and hands-on projects
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Experience Timeline */}
@@ -242,35 +198,36 @@ const ExperienceSection = () => {
               <ExperienceCard
                 key={index}
                 exp={exp}
-                index={index}
                 isLast={index === experiences.length - 1}
               />
             ))}
           </div>
 
           {/* Achievements & Skills Gained */}
-          <div className="space-y-8 animate-slide-in-right">
-            <div className="glass-card p-8 rounded-2xl">
+          <div className="space-y-8">
+            <Reveal variant="slide-right" className="glass-card p-8 rounded-2xl">
               <h3 className="text-2xl font-semibold mb-6 text-card-foreground flex items-center gap-3">
                 <Award className="w-6 h-6 text-accent" />
                 Key Achievements
               </h3>
               <div className="space-y-4">
                 {achievements.map((achievement, index) => (
-                  <div
+                  <Reveal
                     key={index}
+                    variant="fade-up"
+                    delay={index * 90}
+                    duration={500}
                     className="flex items-start gap-3 p-4 bg-background/50 rounded-lg"
-                    style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
                     <p className="text-muted-foreground">{achievement}</p>
-                  </div>
+                  </Reveal>
                 ))}
               </div>
-            </div>
+            </Reveal>
 
             {/* Learning Approach */}
-            <div className="glass-card p-8 rounded-2xl">
+            <Reveal variant="slide-right" delay={120} className="glass-card p-8 rounded-2xl">
               <h3 className="text-xl font-semibold mb-4 text-card-foreground">
                 Learning Philosophy
               </h3>
@@ -279,7 +236,7 @@ const ExperienceSection = () => {
                 with practical implementation. My approach focuses on understanding core concepts 
                 deeply and applying them to solve real-world problems.
               </p>
-            </div>
+            </Reveal>
           </div>
         </div>
       </div>
