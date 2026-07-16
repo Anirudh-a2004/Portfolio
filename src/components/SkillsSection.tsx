@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import Reveal from "@/components/Reveal";
 
 const SkillsSection = () => {
   const skillCategories = [

@@ -83,7 +83,7 @@ const AboutSection = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
