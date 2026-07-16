@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink, Mic, Database, Brain } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 const ProjectsSection = () => {
   const projects = [
