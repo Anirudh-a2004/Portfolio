@@ -6,47 +6,46 @@ const AboutSection = () => {
     {
       icon: <Code className="w-6 h-6" />,
       title: "Voice Surveillance System",
-      description: "Built using Nicla Voice sensor for smart acoustic monitoring"
+      description: "Built using Nicla Voice sensor for smart acoustic monitoring",
     },
     {
       icon: <Database className="w-6 h-6" />,
       title: "Decentralized Cloud Storage",
-      description: "Blockchain-based secure storage solution"
+      description: "Blockchain-based secure storage solution",
     },
     {
       icon: <Shield className="w-6 h-6" />,
       title: "Cybersecurity Focus",
-      description: "Passionate about building secure, reliable systems"
+      description: "Passionate about building secure, reliable systems",
     },
     {
       icon: <Cpu className="w-6 h-6" />,
       title: "IoT Innovation",
-      description: "Expertise in connected systems and IoT fundamentals"
-    }
+      description: "Expertise in connected systems and IoT fundamentals",
+    },
   ];
 
   return (
-    <section id="about" className="py-20 px-4">
+    <section id="about" className="py-16 px-4">
       <div className="container mx-auto max-w-6xl">
-        <Reveal className="text-center mb-16">
-          <h2 className="gradient-text mb-4">About Me</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        <Reveal className="text-center mb-10">
+          <h2 className="gradient-text mb-3">About Me</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Final-year B.E. Computer Science Engineering (IoT & CSBT) student passionate about
             software development, IoT systems, and emerging technologies.
           </p>
         </Reveal>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Description */}
-          <Reveal className="space-y-6">
-            <div className="glass-card p-8 rounded-2xl">
-              <h3 className="text-2xl font-semibold mb-6 text-card-foreground">
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+          <Reveal>
+            <div className="glass-card p-7 rounded-2xl">
+              <h3 className="text-2xl font-semibold mb-4 text-card-foreground">
                 My Journey
               </h3>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="space-y-3 text-muted-foreground leading-relaxed">
                 <p>
-                  Final-year B.E. Computer Science Engineering (IoT & CSBT) student with interest
-                  in software development, IoT systems, and emerging technologies.
+                  Final-year B.E. Computer Science Engineering (IoT & CSBT) student with
+                  interest in software development, IoT systems, and emerging technologies.
                 </p>
                 <p>
                   Hands-on experience through internships and academic projects involving
@@ -61,26 +60,23 @@ const AboutSection = () => {
             </div>
           </Reveal>
 
-          {/* Key Highlights */}
-          <div className="grid gap-6">
+          <div className="grid gap-4">
             {highlights.map((highlight, index) => (
               <Reveal
                 key={index}
                 variant="slide-right"
-                delay={index * 100}
-                className="card-hover group"
+                delay={index * 90}
+                className="card-hover group !p-5"
               >
                 <div className="flex items-start space-x-4">
                   <div className="p-3 bg-gradient-hero rounded-lg text-primary-foreground group-hover:scale-110 transition-transform">
                     {highlight.icon}
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-semibold text-lg mb-2 text-card-foreground">
+                    <h4 className="font-semibold text-lg mb-1 text-card-foreground">
                       {highlight.title}
                     </h4>
-                    <p className="text-muted-foreground">
-                      {highlight.description}
-                    </p>
+                    <p className="text-muted-foreground">{highlight.description}</p>
                   </div>
                 </div>
               </Reveal>

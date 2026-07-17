@@ -1,52 +1,87 @@
 import { Badge } from "@/components/ui/badge";
 import Reveal from "@/components/Reveal";
+import {
+  Code2,
+  Layout,
+  Server,
+  Database,
+  Network,
+  Headphones,
+  ShieldCheck,
+} from "lucide-react";
 
 const SkillsSection = () => {
   const skillCategories = [
     {
-      title: "Security & Systems",
-      skills: ["Cybersecurity Fundamentals", "Networking & Network Security", "IoT & Cloud Fundamentals"]
+      title: "Programming",
+      icon: <Code2 className="w-5 h-5" />,
+      skills: ["Java", "Python", "C", "SAP ABAP Basics"],
     },
     {
-      title: "Core & Programming",
-      skills: ["Java", "C Programming", "SAP ABAP Basics", "ML & DL Fundamentals"]
+      title: "Frontend",
+      icon: <Layout className="w-5 h-5" />,
+      skills: ["React", "Tailwind CSS", "HTML", "CSS"],
     },
     {
-      title: "Web Development",
-      skills: ["React.js Fundamentals", "Node.js & Express.js", "REST APIs", "Git & GitHub"]
-    }
-  ];
-
-  const allSkills = [
-    "Cybersecurity Fundamentals", "Networking & Network Security", "IoT & Cloud Fundamentals",
-    "Java", "C Programming", "SAP ABAP Basics", "ML & DL Fundamentals",
-    "React.js Fundamentals", "Node.js & Express.js", "REST APIs", "Git & GitHub"
+      title: "Backend",
+      icon: <Server className="w-5 h-5" />,
+      skills: ["Node.js", "Express.js", "REST APIs"],
+    },
+    {
+      title: "Database",
+      icon: <Database className="w-5 h-5" />,
+      skills: ["MongoDB", "Firebase", "MySQL"],
+    },
+    {
+      title: "Networking",
+      icon: <Network className="w-5 h-5" />,
+      skills: ["TCP/IP", "DNS", "DHCP", "Network Security"],
+    },
+    {
+      title: "Technical Support",
+      icon: <Headphones className="w-5 h-5" />,
+      skills: ["Windows", "Troubleshooting", "System Configuration"],
+    },
+    {
+      title: "Cybersecurity",
+      icon: <ShieldCheck className="w-5 h-5" />,
+      skills: ["Wireshark", "Burp Suite", "Nmap", "VAPT Basics"],
+    },
   ];
 
   return (
-    <section id="skills" className="py-20 px-4 bg-gradient-hero-subtle">
+    <section id="skills" className="py-16 px-4 bg-gradient-hero-subtle">
       <div className="container mx-auto max-w-6xl">
-        <Reveal className="text-center mb-16">
-          <h2 className="gradient-text mb-4">Technical Skills</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A comprehensive skill set spanning software development, IoT, and cybersecurity
+        <Reveal className="text-center mb-12">
+          <h2 className="gradient-text mb-3">Technical Skills</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Organized across the domains I actively work in
           </p>
         </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillCategories.map((category, i) => (
             <Reveal
-              key={categoryIndex}
-              variant="scale"
-              delay={categoryIndex * 150}
-              className="glass-card p-8 rounded-2xl"
+              key={category.title}
+              variant="fade-up"
+              delay={i * 80}
+              className="glass-card p-6 rounded-2xl hover:shadow-glow transition-shadow duration-300"
             >
-              <h3 className="text-xl font-semibold mb-6 text-card-foreground text-center">
-                {category.title}
-              </h3>
-              <div className="flex flex-wrap gap-3 justify-center">
-                {category.skills.map((skill, skillIndex) => (
-                  <Badge key={skillIndex} className="skill-badge">
+              <div className="flex items-center gap-3 mb-5">
+                <div className="p-2 rounded-lg bg-gradient-hero text-primary-foreground">
+                  {category.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-card-foreground">
+                  {category.title}
+                </h3>
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                {category.skills.map((skill) => (
+                  <Badge
+                    key={skill}
+                    variant="outline"
+                    className="border-primary/40 text-foreground bg-background/40 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  >
                     {skill}
                   </Badge>
                 ))}
@@ -54,25 +89,6 @@ const SkillsSection = () => {
             </Reveal>
           ))}
         </div>
-
-        {/* Additional Skills Grid */}
-        <Reveal className="mt-16 text-center">
-          <h3 className="text-2xl font-semibold mb-8 text-foreground">
-            All Skills at a Glance
-          </h3>
-          <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
-            {allSkills.map((skill, index) => (
-              <Reveal key={index} variant="scale" duration={450} delay={index * 40} as="span">
-                <Badge
-                  variant="outline"
-                  className="px-4 py-2 text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
-                >
-                  {skill}
-                </Badge>
-              </Reveal>
-            ))}
-          </div>
-        </Reveal>
       </div>
     </section>
   );
